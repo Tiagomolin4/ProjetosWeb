@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tabela Dinâmica</title>
+<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 5px;
+    }
+</style>
+</head>
+<body>
+
+<table id="minhaTabela">
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+    </tr>
+</table>
+
+<button onclick="adicionarLinha()">Adicionar Linha</button>
+<button onclick="contarElementos()">Contar Elementos</button>
+<div id="elementos"></div>
+
+<script>
+    function adicionarLinha() {
+        var tabela = document.getElementById("minhaTabela");
+        var newRow = tabela.insertRow();
+        for (var i = 0; i < 3; i++) {
+            var newCell = newRow.insertCell();
+            newCell.textContent = tabela.rows.length + i;
+        }
+    }
+
+    function contarElementos() {
+        var elementos = document.getElementsByTagName("*");
+        var listaElementos = "";
+        for (var i = 0; i < elementos.length; i++) {
+            listaElementos += elementos[i].tagName + "<br>";
+        }
+        document.getElementById("elementos").innerHTML = listaElementos;
+    }
+</script>
+
+</body>
+</html>

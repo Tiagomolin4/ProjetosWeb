@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interatividade Web</title>
+<style>
+    /* Efeito de hover para o div */
+    .hover-effect:hover {
+        background-color: lightblue;
+    }
+    /* Estilo da tabela */
+    table {
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid black;
+        padding: 10px;
+        cursor: pointer; /* Altera o cursor ao passar sobre as células da tabela */
+    }
+</style>
+</head>
+<body>
+
+<!-- Lista de comidas favoritas -->
+<h2>Minhas Comidas Favoritas</h2>
+<ul>
+    <li onclick="exibirComida(this)">Pizza</li>
+    <li onclick="exibirComida(this)">Sushi</li>
+    <li onclick="exibirComida(this)">Lasanha</li>
+    <li onclick="exibirComida(this)">Hambúrguer</li>
+    <li onclick="exibirComida(this)">Tacos</li>
+</ul>
+
+<!-- Div com efeito de hover -->
+<div class="hover-effect" style="width: 200px; height: 100px; margin-top: 20px;">
+    Passe o mouse aqui para ver o efeito de hover
+</div>
+
+<!-- Tabela com células clicáveis -->
+<h2>Tabela Clicável</h2>
+<table>
+    <tr>
+        <th onclick="alterarCor(this)">Coluna 1</th>
+        <th onclick="alterarCor(this)">Coluna 2</th>
+        <th onclick="alterarCor(this)">Coluna 3</th>
+    </tr>
+    <tr>
+        <td onclick="alterarCor(this)">Célula 1</td>
+        <td onclick="alterarCor(this)">Célula 2</td>
+        <td onclick="alterarCor(this)">Célula 3</td>
+    </tr>
+    <tr>
+        <td onclick="alterarCor(this)">Célula 4</td>
+        <td onclick="alterarCor(this)">Célula 5</td>
+        <td onclick="alterarCor(this)">Célula 6</td>
+    </tr>
+</table>
+
+<script>
+    // Função para exibir alerta com o nome da comida
+    function exibirComida(item) {
+        alert("Comida selecionada: " + item.textContent);
+    }
+
+    // Função para alterar a cor de fundo da célula da tabela
+    function alterarCor(cell) {
+        cell.style.backgroundColor = "red";
+    }
+</script>
+
+</body>
+</html>
